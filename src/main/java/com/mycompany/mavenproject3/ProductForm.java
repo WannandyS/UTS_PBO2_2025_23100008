@@ -97,7 +97,11 @@ public class ProductForm extends JFrame {
                 categoryField.setText("");
                 priceField.setText("");
                 stockField.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Gagal menambah produk.");
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error:\n" + e.getMessage());
         }
     }
 
@@ -123,11 +127,38 @@ public class ProductForm extends JFrame {
         int stock = Integer.parseInt(stockText);
 
         try {
-
+            if () {
+                JOptionPane.showMessageDialog(this, "Produk berhasil diubah");
+                codeField.setText("");
+                nameField.setText("");
+                categoryField.setText("");
+                priceField.setText("");
+                stockField.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Gagal mengubah produk.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error:\n" + e.getMessage());
         }
     }
 
     private void deleteProductData() {
-        
+        int selectedRow = table.getSelectedRow();
+        int id = (int) tableModel.getValueAt(selectedRow, 0);
+
+        try {
+            if () {
+                JOptionPane.showMessageDialog(this, "Produk berhasil diubah");
+                codeField.setText("");
+                nameField.setText("");
+                categoryField.setText("");
+                priceField.setText("");
+                stockField.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Gagal mengubah produk.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error:\n" + e.getMessage());
+        }
     }
 }
