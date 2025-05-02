@@ -11,6 +11,8 @@ package com.mycompany.mavenproject3;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.io.OutputStream;
+
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +73,61 @@ public class ProductForm extends JFrame {
                 product.getCode(), product.getName(), product.getCategory(), product.getPrice(), product.getStock()
             });
         }
+    }
+
+    private void addProductData() {
+        String code = codeField.getText().trim();
+        String name = nameField.getText().trim();
+        String category = categoryField.getText().trim();
+        String priceText = priceField().getText().trim();
+        String stockText = stockField().getText().trim();
+
+        if(code.isEmpty() || name.isEmpty() || category.isEmpty() || priceText.isEmpty() || stockText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Kode, Nama, Kategori, Harga dan Stok harus diisi");
+        }
+
+        double price = Double.parseDouble(priceText);
+        int stock = Integer.parseInt(stockText);
+
+        try {
+            if () {
+                JOptionPane.showMessageDialog(this, "Produk berhasil ditambah");
+                codeField.setText("");
+                nameField.setText("");
+                categoryField.setText("");
+                priceField.setText("");
+                stockField.setText("");
+            }
+        }
+    }
+
+    private void editProductData() {
+        int selectedRow = table.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pilih produk yang ingin diubah", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String code = codeField.getText().trim();
+        String name = nameField.getText().trim();
+        String category = categoryField.getText().trim();
+        String priceText = priceField().getText().trim();
+        String stockText = stockField().getText().trim();
+
+        
+        if(code.isEmpty() || name.isEmpty() || category.isEmpty() || priceText.isEmpty() || stockText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Kode, Nama, Kategori, Harga dan Stok harus diisi");
+        }
+
+        double price = Double.parseDouble(priceText);
+        int stock = Integer.parseInt(stockText);
+
+        try {
+
+        }
+    }
+
+    private void deleteProductData() {
+        
     }
 }
