@@ -9,6 +9,11 @@ public class Mavenproject3 extends JFrame implements Runnable {
     private int width;
     private BannerPanel bannerPanel;
     private JButton addProductButton;
+    private JTextField codeField;
+    private JTextField nameField;
+    private JComboBox<String> categoryField;
+    private JTextField priceField;
+    private JTextField stockField;
 
     public Mavenproject3(String text) {
         this.text = text;
@@ -36,6 +41,23 @@ public class Mavenproject3 extends JFrame implements Runnable {
         addProductButton.addActionListener(e -> {
             new ProductForm().setVisible(true);
         });
+
+        JPanel inputPanel = new JPanel(new FlowLayout());
+        codeField = new JTextField(5);
+        nameField = new JTextField(15);
+        categoryField = new JComboBox<>();
+        priceField = new JTextField(10);
+        stockField = new JTextField(5);
+        inputPanel.add(new JLabel("Kode: "));
+        inputPanel.add(codeField);
+        inputPanel.add(new JLabel("Nama: "));
+        inputPanel.add(nameField);
+        inputPanel.add(new JLabel("Kategori: "));
+        inputPanel.add(categoryField);
+        inputPanel.add(new JLabel("Harga: "));
+        inputPanel.add(priceField );
+        inputPanel.add(new JLabel("Stok: "));
+        inputPanel.add(stockField);
 
         buttonPanel.add(addButton);
         buttonPanel.add(editButton);
