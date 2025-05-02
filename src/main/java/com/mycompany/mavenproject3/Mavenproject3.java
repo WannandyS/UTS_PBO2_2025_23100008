@@ -27,10 +27,19 @@ public class Mavenproject3 extends JFrame implements Runnable {
         addProductButton = new JButton("Kelola Produk");
         bottomPanel.add(addProductButton);
         add(bottomPanel, BorderLayout.SOUTH);
+
+        JPanel buttonPanel = new JPanel();
+        JButton addButton = new JButton("Tambah Produk");
+        JButton editButton = new JButton("Edit Produk");
+        JButton deleteButton = new JButton("Hapus Produk");
         
         addProductButton.addActionListener(e -> {
             new ProductForm().setVisible(true);
         });
+
+        buttonPanel.add(addButton);
+        buttonPanel.add(editButton);
+        buttonPanel.add(deleteButton);
 
         setVisible(true);
 
